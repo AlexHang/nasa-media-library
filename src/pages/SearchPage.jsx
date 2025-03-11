@@ -12,7 +12,6 @@ const SearchPage = () => {
     media_type: "image",
   });
   const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
   const [initialSearchDone, setInitialSearchDone] = useState(false);
@@ -40,7 +39,6 @@ const SearchPage = () => {
   }, []);
 
   const handleSearch = async (params) => {
-    setLoading(true);
     setError(null);
     setHasSearched(true);
 
@@ -57,8 +55,6 @@ const SearchPage = () => {
     } catch (err) {
       setError("Failed to fetch results. Please try again.");
       console.log("Search error:", err);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -74,9 +70,7 @@ const SearchPage = () => {
         onSearch={() => handleSearch(searchParams)}
       />
 
-      {loading ? (
-        <Loader />
-      ) : error ? (
+      { error ? (
         <div className="text-red-500 text-center p-4">{error}</div>
       ) : hasSearched && results.length === 0 ? (
         <div className="text-center p-4">

@@ -4,5 +4,7 @@ export default {
     },
     testEnvironment: "jsdom",
     moduleFileExtensions: ["js", "jsx"],
-    moduleDirectories: ["node_modules", "src"]
+    moduleDirectories: ["node_modules", "src"],
+    modulePathIgnorePatterns: ["ui-tests"]
+
   };

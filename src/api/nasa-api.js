@@ -3,7 +3,6 @@
  * https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
  */
 
-// change this in case there is a breaking change by NASA and it gets migrated
 const API_BASE_URL = 'https://images-api.nasa.gov';
 
 

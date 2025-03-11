@@ -94,7 +94,7 @@ const ShowPage = () => {
   if (!collection) {
     return (
       <div className="text-center py-8">
-        <div className="text-gray-700 mb-4">Collection not found</div>
+        <div className="mb-4">Collection not found</div>
         <button 
           onClick={handleGoBack}
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md"
@@ -121,9 +121,6 @@ const ShowPage = () => {
           onClick={handleGoBack}
           className="mb-6 flex items-center text-blue-600 hover:text-blue-800"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
-          </svg>
           Back to search results
         </button>
 
