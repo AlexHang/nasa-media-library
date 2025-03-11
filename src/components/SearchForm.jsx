@@ -50,6 +50,7 @@ const SearchForm = ({ params, onParamsChange, onSearch }) => {
             name="q"
             value={localParams.q}
             onChange={handleChange}
+            data-testid="search-q-input"
             placeholder="e.g., moon, mars, apollo"
             className={`w-full p-2 border rounded-md ${errors.q ? 'border-red-500' : 'border-gray-300'}`}
           />
@@ -94,6 +95,7 @@ const SearchForm = ({ params, onParamsChange, onSearch }) => {
           <button
             type="submit"
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md w-full md:w-auto"
+            data-testid="search-btn"
           >
             Search
           </button>

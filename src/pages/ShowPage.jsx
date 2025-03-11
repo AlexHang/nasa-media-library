@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getAssetById } from '../api/nasa-api';
-import { formatDate } from '../utils/format-date';
 import Loader from '../utils/Loader';
 
 const ShowPage = () => {
@@ -55,7 +54,7 @@ const ShowPage = () => {
         }
       } catch (err) {
         setError('Failed to fetch collection details. Please try again.');
-        console.error('Error fetching collection:', err);
+        console.log('Error fetching collection:', err);
       } finally {
         setLoading(false);
       }
@@ -128,7 +127,7 @@ const ShowPage = () => {
           Back to search results
         </button>
 
-        <h1 className="text-2xl md:text-3xl font-bold mb-4">{title}</h1>
+        <h1 data-testid="title-result" className="text-2xl md:text-3xl font-bold mb-4">{title}</h1>
         
         {images.length > 0 ? (
           <div className="mb-6">
@@ -182,13 +181,13 @@ const ShowPage = () => {
             
             <div>
               <h2 className="text-sm font-semibold text-gray-500">Date</h2>
-              <p>{date_created ? formatDate(date_created) : 'Unknown'}</p>
+              <p>{date_created ? date_created : 'Unknown'}</p>
             </div>
           </div>
           
           <div>
             <h2 className="text-sm font-semibold text-gray-500">Description</h2>
-            <p className="mt-1">{description}</p>
+            <p data-testid="description-result" className="mt-1">{description}</p>
           </div>
           
           {keywords && keywords.length > 0 && (

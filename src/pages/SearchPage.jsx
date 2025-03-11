@@ -56,7 +56,7 @@ const SearchPage = () => {
       setResults(data.collection.items || []);
     } catch (err) {
       setError("Failed to fetch results. Please try again.");
-      console.error("Search error:", err);
+      console.log("Search error:", err);
     } finally {
       setLoading(false);
     }

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { formatDate } from '../utils/format-date';
 
 const ImageCard = ({ nasaId, title, location, photographer, thumbnail, dateCreated }) => {
   return (
     <Link to={`/show/${nasaId}`} className="block">
-      <div className="bg-black rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div data-testid="result-image-card" className="bg-black rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
         <div className="h-48 overflow-hidden bg-gray-200">
           <img 
             src={thumbnail} 
@@ -38,7 +37,7 @@ const ImageCard = ({ nasaId, title, location, photographer, thumbnail, dateCreat
             
             {dateCreated && (
               <p className="text-xs text-gray-500 mt-2">
-                {formatDate(dateCreated)}
+                {dateCreated}
               </p>
             )}
           </div>
